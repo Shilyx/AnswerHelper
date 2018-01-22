@@ -1,0 +1,36 @@
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_88c8f8af-0a40-4ba5-a18f-4af21e3c2f83.jpg
+[ '中国古代砸缸救小伙伴的人是?', '司马迁', '司马光', '司马蕗' ]
+A(0) B(35) C(0) 大概是【 B 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_33b54415-b493-4bbd-b924-5a4dc52903f8.jpg
+[ '一杯糖水喝掉一半后,糖水的密度变化是?', '变大', '变小', '不变' ]
+A(0) B(0) C(7) 大概是【 C 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_f3a4d4bf-1700-4820-ae82-c1a54d79510c.jpg
+[ '美美国家庭在感恩节基本都会吃的传统食物是?', '火鸡', '烤鸭', '烤乳猪' ]
+A(22) B(0) C(0) 大概是【 A 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_2e0704cb-ee0c-4ae5-8dad-c14d43deca50.jpg
+[ '“范进中举”的故事节选自下列哪本书籍?', '《聊斋》', '《儒林外史》', '《菜根谭》' ]
+A(0) B(11) C(0) 大概是【 B 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_568f9c9f-11fe-43fa-a4f4-355d95563f3e.jpg
+[ '以下哪项不是电脑的输出设备?', '显示器', '鼠标', '打印机' ]
+A(14) B(10) C(16) 大概是【 B 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_b7e56cf7-9057-4bc2-891d-fe7ec1436837.jpg
+[ '充入食品包装袋,可以起到防腐作用的气体是?', '氧气', '二氧化碳', '氮气' ]
+A(18) B(2) C(29) 大概是【 C 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_aed599bf-3e72-429c-9198-12b4641eb760.jpg
+[ '清朝顺治皇帝的生母是?', '甄嬛', '纯元皇后', '孝庄文皇后' ]
+A(0) B(0) C(7) 大概是【 C 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_e18e9b4d-59ae-493c-9ac8-56b1de9d6bb3.jpg
+[ '在周杰伦的歌曲中,下列哪一首不是由方文山作词?', '《青花瓷', '《菊花台》', '《 晴天' ]
+A(1) B(1) C(0) 大概是【 C 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_ba9b44a9-82f5-4e6a-a6be-582aae6a2742.jpg
+[ '下列哪一个皇帝自创了一种书法字体?', '宋徽宗', '唐太宗', '明成祖' ]
+A(62) B(0) C(0) 大概是【 A 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_29503008-5d79-490d-adb0-359ae58a94af.jpg
+[ '以下哪个选项的计算结果为1?', '1与1的倒数相加', '1与1的相反数相乘', '1与1的绝 对值相乘' ]
+无法判断
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_cc852fa2-3e5a-440c-b770-c929cf465cbf.jpg
+[ '我们常说"闯关东”,其中“关"是指哪一关?', '玉门关', '函谷关', '山海关' ]
+A(0) B(0) C(20) 大概是【 C 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_4f5ef51a-90a6-43b4-b759-987a01220ced.jpg
+[ '足球比赛时,每一队人数小于多少时,裁判有权暂停', '或终止比赛?', 'null', 'null' ]
+题目不全

@@ -1,0 +1,134 @@
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_2b893cfe-bebc-4de9-8a22-abcf27c3b333.jpg
+{ log_id: 5179126551463142000,
+  direction: 0,
+  words_result_num: 1,
+  words_result: [ { words: '1.5的倍数的个位数不可能是?' } ],
+  language: 3 }
+[ '5的倍数的个位数不可能是?', 'null', 'null', 'null' ]
+题目不全
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_806d489d-12ef-40ae-ac34-3df5b12fe508.jpg
+{ log_id: 5468413960021514000,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '2.“法棍”是什么东西?' },
+     { words: '法式面包' },
+     { words: '绝缘棒' },
+     { words: '种冷兵器' } ],
+  language: 3 }
+[ '“法棍”是什么东西?', '法式面包', '绝缘棒', '种冷兵器' ]
+A(2) B(0) C(0) 大概是【 A 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_5a9f243b-e797-4bad-a81d-8469325dcc6a.jpg
+{ log_id: 3048486914747890000,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '3.我国法定结婚年岭是多大?' },
+     { words: '男22岁女20岁' },
+     { words: '男24岁女22岁' },
+     { words: '男25岁女23岁' } ],
+  language: 3 }
+[ '我国法定结婚年岭是多大?', '男22岁女20岁', '男24岁女22岁', '男25岁女23岁' ]
+无法判断
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_b4664bb2-f770-427d-a82d-9c5487da1c22.jpg
+{ log_id: 4659189369721364000,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '4.下列哪种做法或设计是为了增大摩擦力?' },
+     { words: '旅行箱下的小轮子' },
+     { words: '轮胎上的花纹' },
+     { words: '给齿轮加润滑油' } ],
+  language: 3 }
+[ '下列哪种做法或设计是为了增大摩擦力?', '旅行箱下的小轮子', '轮胎上的花纹', '给齿轮加润滑油' ]
+A(0) B(1) C(0) 大概是【 B 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_fc4d2e27-31dc-4e3c-ac16-34059cedf40f.jpg
+{ log_id: 2797885534013214700,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '5.世界闻名的电影工业中心好莱坞位于哪个国家?' },
+     { words: '法国' },
+     { words: '美国' },
+     { words: '英国' } ],
+  language: -1 }
+[ '世界闻名的电影工业中心好莱坞位于哪个国家?', '法国', '美国', '英国' ]
+A(0) B(37) C(0) 大概是【 B 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_7ca852b5-b720-4915-91d7-b29188567da8.jpg
+{ log_id: 2838559933317135000,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '6.中药”阿胶”的主要原料是?' },
+     { words: '驴皮' },
+     { words: '羊皮' },
+     { words: '鹿皮' } ],
+  language: 3 }
+[ '中药”阿胶”的主要原料是?', '驴皮', '羊皮', '鹿皮' ]
+A(17) B(0) C(0) 大概是【 A 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_f97953fc-31cf-41be-994a-a80cd55a0228.jpg
+{ log_id: 8730813780380524000,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '7.下列哪种名茶的主要产地在云南?' },
+     { words: '铁观音' },
+     { words: '君山银针' },
+     { words: '普洱' } ],
+  language: 3 }
+[ '下列哪种名茶的主要产地在云南?', '铁观音', '君山银针', '普洱' ]
+A(0) B(0) C(23) 大概是【 C 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_1371cb88-f3cc-4041-9e47-45078aff29e6.jpg
+{ log_id: 6379454141053665000,
+  direction: 0,
+  words_result_num: 3,
+  words_result:
+   [ { words: '8.家用电线中的导体一般采用什么材料?' },
+     { words: '铁' },
+     { words: '铅' } ],
+  language: 3 }
+[ '家用电线中的导体一般采用什么材料?', '铁', '铅', 'null' ]
+A(1) B(0) C(0) 大概是【 A 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_010bb8f4-e4b2-4efd-ad66-73309f04319c.jpg
+{ log_id: 5886756088792524000,
+  direction: 0,
+  words_result_num: 1,
+  words_result: [ { words: '9.小提琴有4根弦,那么大提琴有几根弦?' } ],
+  language: 3 }
+[ '小提琴有4根弦,那么大提琴有几根弦?', 'null', 'null', 'null' ]
+题目不全
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_00907596-6c10-4575-8736-a552393e16fd.jpg
+{ log_id: 7779142348330842000,
+  direction: 0,
+  words_result_num: 2,
+  words_result: [ { words: '10.当汽车加满油时,油表指针指向的字母是?' }, { words: 'E' } ],
+  language: -1 }
+[ '当汽车加满油时,油表指针指向的字母是?', 'E', 'null', 'null' ]
+题目不全
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_95a79dc9-bfba-40f4-8850-e349a8901b12.jpg
+{ log_id: 8538481203612805000,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '11.“黍离之悲"用用来形容国破家亡之痛,这个成语出自以' },
+     { words: '《尚书》' },
+     { words: '《诗经》' },
+     { words: '《礼记》' } ],
+  language: 3 }
+[ '“黍离之悲"用用来形容国破家亡之痛,这个成语出自以', '《尚书》', '《诗经》', '《礼记》' ]
+A(0) B(12) C(0) 大概是【 B 】
+开始处理C:\Users\lt\AppData\Local\Temp\\__AnswerHelper_de241b45-00c9-4a4d-8ee5-ca20a70ea6d3.jpg
+{ log_id: 2040418178864215800,
+  direction: 0,
+  words_result_num: 4,
+  words_result:
+   [ { words: '12.将适量的水、苯、水银倒入足够大的烧杯中,哪种物' },
+     { words: '水' },
+     { words: '苯' },
+     { words: '水银' } ],
+  language: 3 }
+[ '将适量的水、苯、水银倒入足够大的烧杯中,哪种物', '水', '苯', '水银' ]
+A(87) B(10) C(21) 大概是【 A 】
+
+
+

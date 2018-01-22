@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动搜索</title>
+    <link rel="stylesheet" type="text/css" href="/basic.css" />
+</head>
+<body>
+<div style="display:inline;float:left">
+<iframe class="frame q" id="q" src="">
+
+</iframe>
+</div>
+<div style="display:inline;float:right">
+<iframe class="frame a" id="a1" src="">
+
+</iframe>
+<iframe class="frame a" id="a2" src="">
+
+</iframe>
+<iframe class="frame a" id="a3" src="">
+
+</iframe>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    var lastKeywordsString = "init";
+    $(document).ready(function () {
+        setInterval(function () {
+            $.ajax({
+                "type": "GET",
+                "url": "global_keywords.action",
+                "timeout": 3333,
+                "dataType": "jsonp",
+                "success": function (arr) {
+                    var arr_string = JSON.stringify(arr);
+
+                    if (arr_string != lastKeywordsString) {
+                        lastKeywordsString = arr_string;
+
+                        while (arr.length < 4) {
+                            arr.push("null");
+                        }
+
+                        if (arr && arr.length > 0) {
+                            for (var i = 0; i < arr.length; ++i) {
+                                console.log(arr[i]);
+                            }
+                        }
+
+                        document.querySelector("#q").src  = "https://www.baidu.com/s?wd=" + arr[0];
+                        document.querySelector("#a1").src = "https://www.baidu.com/s?wd=" + arr[1];
+                        document.querySelector("#a2").src = "https://www.baidu.com/s?wd=" + arr[2];
+                        document.querySelector("#a3").src = "https://www.baidu.com/s?wd=" + arr[3];
+                    }
+                },
+                "error": function (msg) {
+
+                }
+            });
+        }, 333);
+    });
+</script>

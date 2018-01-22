@@ -1,0 +1,26 @@
+.frame {
+    height: 331px;
+    width: 673px;
+    position: absolute;
+}
+
+#q {
+    left: 690px;
+    height: 999px;
+}
+
+#a1 {
+    top: 0px;
+}
+
+#a2 {
+    top: 333px;
+}
+
+#a3 {
+    top: 666px;
+}
+
+.a {
+    left: 0px;
+}
