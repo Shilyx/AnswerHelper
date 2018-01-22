@@ -15,12 +15,13 @@
 * `npm install mime`
 * `npm install cheerio`
 * `npm install segment`
-4. 申请[百度文字识别服务](https://ai.baidu.com/tech/ocr)测试账号，在文字识别服务中选择`创建服务`，获取到`AppID`、`API Key`、`Secret Key`后写入`AnswerHelperServer.js`文件中的相应位置：
-> // 设置APPID/AK/SK
-> var APP_ID = "申请到的AppID";
-> var API_KEY = "申请到的API Key";
-> var SECRET_KEY = "申请到的Secret Key";
-5. 此时js端就配置完了
+4. 申请[百度文字识别服务](https://ai.baidu.com/tech/ocr)测试账号，在文字识别服务中选择`创建服务`，获取到`AppID`、`API Key`、`Secret Key`后写入`AnswerHelperServer.js`文件中的相应位置即可
+```javascript
+// 设置APPID/AK/SK
+var APP_ID = "申请到的AppID";
+var API_KEY = "申请到的API Key";
+var SECRET_KEY = "申请到的Secret Key";
+```
 ## 二、构建vc++组件
 1. 使用vs2008或更高版本打开`AnswerHelper_vc2008.sln`
 2. 编译win32平台的Release版本的可执行文件`AnswerHelper.exe`
