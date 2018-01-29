@@ -157,6 +157,8 @@ private:
         case WM_CTLCOLORSTATIC:
             if (lParam == (LPARAM)GetDlgItem(m_hwndDlg, IDC_AIRESULT)) {
                 break;
+            } else if (lParam == (LPARAM)GetDlgItem(m_hwndDlg, IDC_AUTODO)) {
+                break;
             }
             return (INT_PTR)GetStockObject(WHITE_BRUSH);
             break;
@@ -166,6 +168,10 @@ private:
                 if (m_nShownRestTime > 0) {
                     if (--m_nShownRestTime <= 0) {
                         SetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, NULL);
+                    } else {
+                        WCHAR szText[1024] = L" ";
+                        GetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, szText + 1, RTL_NUMBER_OF(szText) - 1);
+                        SetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, szText);
                     }
                 }
             }
@@ -180,8 +186,34 @@ private:
 
     void OnInitDialog()
     {
+        const WCHAR *lpJsPaths[] = {
+            L"AnswerHelperServer.js",
+            L"AnswerHelperServer\\AnswerHelperServer.js",
+            L"..\\AnswerHelperServer\\AnswerHelperServer.js",
+            L"..\\nodejs\\AnswerHelperServer\\AnswerHelperServer.js",
+            L"..\\..\\nodejs\\AnswerHelperServer\\AnswerHelperServer.js",
+        };
+        wstring strJsPath;
+
+        for (int i = 0; i < RTL_NUMBER_OF(lpJsPaths); ++i) {
+            WIN32_FIND_DATAW wfd;
+            HANDLE hFind = FindFirstFileW(lpJsPaths[i], &wfd);
+
+            if (hFind != INVALID_HANDLE_VALUE && hFind != NULL) {
+                FindClose(hFind);
+                strJsPath = lpJsPaths[i];
+                break;
+            }
+        }
+
+        if (strJsPath.empty()) {
+            MessageBoxW(m_hwndDlg, L"ÕÒ²»µ½AnswerHelperServer.js", NULL, MB_ICONERROR | MB_SYSTEMMODAL);
+            DestroyWindow(m_hwndDlg);
+            return;
+        }
+
         LoadWindowPlacement(m_hwndDlg, L"AnswerHelper", NULL, FALSE, FALSE);
-        InitServer();
+        InitServer(strJsPath.c_str());
         SetDlgItemTextW(m_hwndDlg, IDC_STATIC_FILL, NULL);
         ModifyExStyle(m_hwndDlg, WS_EX_LAYERED, 0);
         SetLayeredWindowAttributes(m_hwndDlg, RGB(255, 255, 255), 0, LWA_COLORKEY);
@@ -232,7 +264,7 @@ private:
             int ret = recvfrom(sock, szBuffer, sizeof(szBuffer), 0, (sockaddr *)&sin, &len);
 
             if (ret > 0) {
-                m_nShownRestTime = 10;
+                m_nShownRestTime = 20;
                 SetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, UtoW(string(szBuffer, ret)).c_str());
             } else if (ret < 0) {
                 break;
@@ -251,12 +283,12 @@ private:
         DeleteFileW(m_strLastJpgPath.c_str());
     }
 
-    void InitServer() {
+    void InitServer(LPCWSTR lpJsPath) {
         WCHAR szParams[1024];
 
         m_nServerPort = rand() % 8000 + 51000;
         CloseHandle(CreateClassThread(std::tr1::bind(&CAnswerHelperDialog::RecvAIResultProc, this, m_nServerPort + 1), 0, NULL));
-        wnsprintfW(szParams, RTL_NUMBER_OF(szParams), L"/k node AnswerHelperServer\\AnswerHelperServer.js %u", (unsigned)m_nServerPort);
+        wnsprintfW(szParams, RTL_NUMBER_OF(szParams), L"/k node %ls %u", lpJsPath, (unsigned)m_nServerPort);
 
         HANDLE hChildProcess = ShellExecuteReturnProcess(NULL, L"open", L"cmd", szParams, NULL, SW_SHOW);
         if (hChildProcess) {
