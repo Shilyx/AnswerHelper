@@ -36,6 +36,7 @@ public:
         , m_hParent(hParent)
         , m_nServerPort(0)
         , m_dwShouldDoCount(0)
+        , m_hSpecBrush(CreateSolidBrush(RGB(177, 188, 199)))
     {
     }
 
@@ -166,7 +167,7 @@ private:
             } else if (lParam == (LPARAM)GetDlgItem(m_hwndDlg, IDC_AUTODO)) {
                 break;
             }
-            return (INT_PTR)GetStockObject(WHITE_BRUSH);
+            return (INT_PTR)m_hSpecBrush;
             break;
 
         case WM_TIMER:
@@ -277,7 +278,7 @@ private:
         InitServer(strJsPath.c_str());
         SetDlgItemTextW(m_hwndDlg, IDC_STATIC_FILL, NULL);
         ModifyExStyle(m_hwndDlg, WS_EX_LAYERED, 0);
-        SetLayeredWindowAttributes(m_hwndDlg, RGB(255, 255, 255), 0, LWA_COLORKEY);
+        SetLayeredWindowAttributes(m_hwndDlg, RGB(177, 188, 199), 0, LWA_COLORKEY);
         SendMessageW(m_hwndDlg, WM_SIZE, 0, 0);
         SetTimer(m_hwndDlg, TIMER_SHOWRESULT, 1000, NULL);
         SetTimer(m_hwndDlg, TIMER_AUTODO, 100, NULL);
@@ -506,6 +507,7 @@ private:
     int m_nShownRestTime;
     DWORD m_dwShouldDoCount;
     DWORD m_dwChildProcessId;
+    HBRUSH m_hSpecBrush;
 };
 
 int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nShowCmd)
