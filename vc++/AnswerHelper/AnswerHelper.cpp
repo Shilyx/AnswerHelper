@@ -19,6 +19,11 @@
 using namespace Gdiplus;
 using namespace std;
 
+enum {
+    TIMER_SHOWRESULT = 1,
+    TIMER_AUTODO,
+};
+
 class CAnswerHelperDialog
 {
 #define ANSWERHELPER_OBJECT_PROP_NAME TEXT("__AnswerHelperObject")
@@ -30,6 +35,7 @@ public:
         , m_hwndDlg(NULL)
         , m_hParent(hParent)
         , m_nServerPort(0)
+        , m_dwShouldDoCount(0)
     {
     }
 
@@ -164,7 +170,7 @@ private:
             break;
 
         case WM_TIMER:
-            if (wParam == 1) {
+            if (wParam == TIMER_SHOWRESULT) {
                 if (m_nShownRestTime > 0) {
                     if (--m_nShownRestTime <= 0) {
                         SetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, NULL);
@@ -172,6 +178,19 @@ private:
                         WCHAR szText[1024] = L" ";
                         GetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, szText + 1, RTL_NUMBER_OF(szText) - 1);
                         SetDlgItemTextW(m_hwndDlg, IDC_AIRESULT, szText);
+                    }
+                }
+            } else if (wParam == TIMER_AUTODO) {
+                if (IsDlgButtonChecked(m_hwndDlg, IDC_AUTODO) == BST_CHECKED) {
+                    if (ShouldDo()) {
+                        if (m_dwShouldDoCount < 4) {
+                            ++m_dwShouldDoCount;
+                            if (m_dwShouldDoCount == 4) {
+                                OnDo();
+                            }
+                        }
+                    } else {
+                        m_dwShouldDoCount = 0;
                     }
                 }
             }
@@ -182,6 +201,48 @@ private:
         }
 
         return FALSE;
+    }
+
+    bool ShouldDo() {
+        bool bResult = false;
+        HWND hStatic = GetDlgItem(m_hwndDlg, IDC_STATIC_FILL);
+        RECT rect;
+
+        GetWindowRect(hStatic, &rect);
+        int nWidth = rect.right - rect.left;
+        int nHeight = rect.bottom - rect.top;
+        int nShortSide = nWidth < nHeight ? nWidth : nHeight;
+
+        HDC hScreenDc = GetDC(NULL);
+        HDC hMemDc = CreateCompatibleDC(hScreenDc);
+        HBITMAP hMemBmp = CreateCompatibleBitmap(hScreenDc, nWidth, nHeight);
+        HGDIOBJ hOldBmp = SelectObject(hMemDc, (HGDIOBJ)hMemBmp);
+
+        BitBlt(hMemDc, 0, 0, rect.right - rect.left, rect.bottom - rect.top, hScreenDc, rect.left, rect.top, SRCCOPY);
+
+        int nTotalPts = 1;
+        int nWhitePts = 1;
+        for (int i = 0; i < nShortSide; ++i) {
+            COLORREF color = GetPixel(hMemDc, i, i);
+
+            if (GetRValue(color) > 225 && GetGValue(color) > 225 && GetBValue(color) > 225) {
+                nWhitePts += 1;
+            }
+            nTotalPts += 1;
+        }
+
+        if ((double)nWhitePts / (double)nTotalPts > 0.5f) {
+            bResult = true;
+        }
+
+        SetDlgItemInt(m_hwndDlg, IDC_DO, nWhitePts, FALSE);
+
+        SelectObject(hMemDc, hOldBmp);
+        DeleteObject(hMemBmp);
+        DeleteDC(hMemDc);
+        ReleaseDC(NULL, hScreenDc);
+
+        return bResult;
     }
 
     void OnInitDialog()
@@ -218,7 +279,8 @@ private:
         ModifyExStyle(m_hwndDlg, WS_EX_LAYERED, 0);
         SetLayeredWindowAttributes(m_hwndDlg, RGB(255, 255, 255), 0, LWA_COLORKEY);
         SendMessageW(m_hwndDlg, WM_SIZE, 0, 0);
-        SetTimer(m_hwndDlg, 1, 1000, NULL);
+        SetTimer(m_hwndDlg, TIMER_SHOWRESULT, 1000, NULL);
+        SetTimer(m_hwndDlg, TIMER_AUTODO, 100, NULL);
     }
 
     void SwitchCmdShown() {
@@ -442,6 +504,7 @@ private:
     wstring m_strLastJpgPath;
     USHORT m_nServerPort;
     int m_nShownRestTime;
+    DWORD m_dwShouldDoCount;
     DWORD m_dwChildProcessId;
 };
 
